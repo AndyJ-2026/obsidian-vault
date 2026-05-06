@@ -9,5 +9,6 @@
 .DS_Store
 .Trash/
 
-# Claude Code sessions
-.claude/
+# Claude Code sessions (保留 commands)
+.claude/*
+!.claude/commands/
