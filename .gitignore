@@ -1,0 +1,13 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/graph.json
+.obsidian/page-preview.json
+
+# macOS
+.DS_Store
+.Trash/
+
+# Claude Code sessions
+.claude/
