@@ -54,4 +54,4 @@
 ```
 
 ## 完成后
-将生成的纪要保存到 `/Users/jaker/Documents/Obsidian Vault/会议纪要/` 目录，文件名格式：`YYYY-MM-DD 会议纪要.md`
+运行 `git rev-parse --show-toplevel` 获取知识库根目录，将纪要保存到 `会议纪要/` 目录，文件名格式：`YYYY-MM-DD 会议纪要.md`

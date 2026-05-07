@@ -4,8 +4,11 @@
 
 根据用户输入的需求名称（$ARGUMENTS），完成以下所有步骤：
 
+### 0. 定位知识库根目录
+运行 `git rev-parse --show-toplevel` 获取知识库根目录路径，后续所有操作基于此路径。
+
 ### 1. 创建需求文件夹
-从 `/Users/jaker/Documents/Obsidian Vault/需求/_模板/` 复制完整结构到 `/Users/jaker/Documents/Obsidian Vault/需求/<需求名>/`：
+从 `需求/_模板/` 复制完整结构到 `需求/<需求名>/`：
 ```
 需求/<需求名>/
 ├── index.md
@@ -25,11 +28,11 @@
 
 ### 3. 判断是否需要代码仓库
 问用户：
-- 这个需求关联哪个代码仓库？（列出可选仓库：lark-bot / black-swan-monitor / meeting-cli / 新建仓库 / 无需代码仓库）
-- 如果选了仓库 → 创建 worktree：
+- 这个需求需要关联代码仓库吗？（新建仓库 / 已有仓库 / 无需代码仓库）
+- 如果需要 → 问用户仓库名和本地路径 → 创建 worktree：
   ```bash
-  cd /Users/jaker/<仓库名>
-  git worktree add /Users/jaker/<仓库名>-<需求名> -b feat/<需求名>
+  cd <仓库路径>
+  git worktree add ../<仓库名>-<需求名> -b feat/<需求名>
   ```
   然后把 worktree、repo、branch 写入 index.md 的 frontmatter
 
@@ -48,7 +51,6 @@
 
 ## 注意
 - 全程中文交流
-- 知识库路径：`/Users/jaker/Documents/Obsidian Vault/`
 - 路径含空格时用引号包裹
 - 不要跳过任何步骤
 - 每一步完成后简短确认再进入下一步

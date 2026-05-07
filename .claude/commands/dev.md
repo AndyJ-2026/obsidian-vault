@@ -10,10 +10,9 @@
 4. **规格驱动**——严格按 规格→方案→任务 流程走，但对用户屏蔽流程术语
 
 ## 知识库
-路径：`/Users/jaker/Documents/Obsidian Vault/`
-需求目录：`/Users/jaker/Documents/Obsidian Vault/需求/`
-模板目录：`/Users/jaker/Documents/Obsidian Vault/需求/_模板/`
-可用仓库：lark-bot / black-swan-monitor / meeting-cli（均在 /Users/jaker/ 下）
+运行 `git rev-parse --show-toplevel` 获取知识库根目录。
+需求目录：`<根目录>/需求/`
+模板目录：`<根目录>/需求/_模板/`
 
 ## 工作流程
 

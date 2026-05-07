@@ -6,7 +6,7 @@
 title: "需求名称"
 status: draft | spec | design | dev | review | done
 created: "YYYY-MM-DD"
-worktree: "/Users/jaker/<仓库>-<需求>"
+worktree: "<worktree 绝对路径>"
 repo: "<仓库名>"
 branch: "feat/<需求名>"
 prd: "飞书链接"

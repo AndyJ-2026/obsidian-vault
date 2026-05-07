@@ -2,7 +2,7 @@
 title: "{{需求名称}}"
 status: draft  # draft | spec | design | dev | review | done
 created: "{{date}}"
-worktree: ""  # 例: /Users/jaker/lark-bot-需求A
+worktree: ""  # 例: ~/my-project-需求A
 repo: ""  # 例: lark-bot
 branch: ""
 prd: ""  # 飞书 PRD 链接
