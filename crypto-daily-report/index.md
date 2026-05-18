@@ -1,20 +1,37 @@
 ---
 title: "crypto-daily-report"
-repo: "obsidian-vault"
-local_path: "/Users/jaker/.codex/worktrees/58ab/Obsidian Vault/crypto-daily-report"
-github: "https://github.com/AndyJ-2026/obsidian-vault"
+repo: "crypto-daily-report"
+local_path: "/Users/jaker/crypto-daily-report"
+github: "https://github.com/AndyJ-2026/crypto-daily-report"
 private: false
+status: running
+deploy: github-actions
+delivery: cloudflare-relay
 ---
 
 # crypto-daily-report
 
 独立的加密货币日报生成与发送项目。每天定时抓取价格与 PANEWS 内容，组装为固定格式日报，并通过 Cloudflare Worker relay 发送单张 Lark interactive card。
 
+## 当前状态
+
+- 现在已经独立运行
+- 代码与 workflow 已迁移到独立仓库
+- Obsidian Vault 只保留项目入口、规则说明和协作文档
+- 原 `obsidian-vault` 内的日报 workflow 已进入退场流程，避免双发
+
+## 项目边界
+
+- Obsidian 入口：当前文档
+- 当前代码位置：`/Users/jaker/crypto-daily-report`
+- 当前 GitHub 仓库：`AndyJ-2026/crypto-daily-report`
+- 当前项目类型：独立仓库型自动运营项目
+
 ## 架构
 
 ```text
 GitHub Actions (10:30 BJT)
-  -> crypto-daily-report/scripts/crypto-daily-report.mjs
+  -> /Users/jaker/crypto-daily-report/scripts/crypto-daily-report.mjs
     -> CoinMarketCap / CryptoSlate
     -> PANEWS RSS + 页面
     -> Cloudflare Worker /send-lark
@@ -24,13 +41,12 @@ GitHub Actions (10:30 BJT)
 ## 代码结构
 
 ```text
-crypto-daily-report/
-  index.md                        <- 项目说明
+/Users/jaker/crypto-daily-report/
+  README.md                       <- 项目说明
   scripts/
     crypto-daily-report.mjs       <- 日报生成与发送脚本
-
-.github/workflows/
-  crypto-daily-report.yml         <- 远端定时任务入口
+  .github/workflows/
+    crypto-daily-report.yml       <- 远端定时任务入口
 ```
 
 ## 运行规则
