@@ -14,6 +14,19 @@ brand: lark
 
 可配置的飞书 AI 机器人。clone 后一键安装，聊天内完成配置，零编码上手。
 
+## 当前状态
+
+- 当前持续运行于本地 Mac
+- 通过 LaunchAgent 管理进程，负责本地常驻和自动重启
+- 项目已经是独立仓库，不依赖 Obsidian Vault 承载运行代码
+
+## 项目边界
+
+- Obsidian 入口：当前文档
+- 本地代码仓：`/Users/jaker/lark-bot`
+- GitHub 仓库：`AndyJ-2026/lark-bot`
+- 项目类型：独立仓库型应用项目
+
 ## 快速开始
 
 ```bash
