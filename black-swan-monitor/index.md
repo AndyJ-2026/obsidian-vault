@@ -9,3 +9,8 @@ private: false
 # black-swan-monitor
 
 加密货币黑天鹅事件监控，监控 Binance/OKX/Bybit + 链上数据，异常时推送飞书告警。
+
+## 相关链路
+
+- 黑天鹅告警：远端 trigger / MCP Worker
+- 加密日报：GitHub Actions 定时任务 → Cloudflare Worker `/send-lark` relay → Lark webhook

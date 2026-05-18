@@ -1,0 +1,40 @@
+name: Crypto Daily Report
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Generate only, do not send to Lark"
+        required: false
+        default: "false"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: crypto-daily-report
+  cancel-in-progress: false
+
+jobs:
+  send-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate and send report
+        env:
+          CRYPTO_DAILY_RELAY_URL: ${{ secrets.CRYPTO_DAILY_RELAY_URL }}
+          CRYPTO_DAILY_RELAY_SECRET: ${{ secrets.CRYPTO_DAILY_RELAY_SECRET }}
+          CRYPTO_DAILY_LARK_WEBHOOK_URL: ${{ secrets.CRYPTO_DAILY_LARK_WEBHOOK_URL }}
+          CRYPTO_DAILY_LARK_WEBHOOK_SECRET: ${{ secrets.CRYPTO_DAILY_LARK_WEBHOOK_SECRET }}
+          CRYPTO_DAILY_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: node scripts/crypto-daily-report.mjs
