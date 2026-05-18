@@ -12,6 +12,19 @@ deploy: local
 
 一键录音 + 本地转写 + AI 生成纪要，纪要自动存入 Obsidian。
 
+## 当前状态
+
+- 当前作为本地工具按需手动执行
+- 运行依赖本机音频能力，不是远端常驻服务
+- 项目已经是独立仓库，不依赖 Obsidian Vault 承载运行代码
+
+## 项目边界
+
+- Obsidian 入口：当前文档
+- 本地代码仓：`/Users/jaker/meeting-cli`
+- GitHub 仓库：`AndyJ-2026/meeting-cli`
+- 项目类型：独立仓库型本地工具项目
+
 ## 功能
 
 | 功能 | 说明 |
