@@ -25,7 +25,9 @@ description: 生成每日加密货币行情日报。当用户说“加密日报�
 - 当前推荐把日报生成与发送放到远端定时任务里运行，不依赖本地 worktree 是否在线。
 - 仓库内的 GitHub Actions 工作流与脚本路径：
   - `.github/workflows/crypto-daily-report.yml`
-  - `scripts/crypto-daily-report.mjs`
+  - `crypto-daily-report/scripts/crypto-daily-report.mjs`
+- 项目说明目录：
+  - `crypto-daily-report/index.md`
 - 模型可以更换，但日报规则和发送目标应该保持由仓库文件定义，而不是依赖某个模型私有 connector 名称。
 
 ## 工作流

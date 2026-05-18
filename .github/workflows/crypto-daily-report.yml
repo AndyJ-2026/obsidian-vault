@@ -37,4 +37,4 @@ jobs:
           CRYPTO_DAILY_LARK_WEBHOOK_URL: ${{ secrets.CRYPTO_DAILY_LARK_WEBHOOK_URL }}
           CRYPTO_DAILY_LARK_WEBHOOK_SECRET: ${{ secrets.CRYPTO_DAILY_LARK_WEBHOOK_SECRET }}
           CRYPTO_DAILY_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
-        run: node scripts/crypto-daily-report.mjs
+        run: node crypto-daily-report/scripts/crypto-daily-report.mjs

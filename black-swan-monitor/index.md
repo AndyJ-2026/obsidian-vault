@@ -13,4 +13,3 @@ private: false
 ## 相关链路
 
 - 黑天鹅告警：远端 trigger / MCP Worker
-- 加密日报：GitHub Actions 定时任务 → Cloudflare Worker `/send-lark` relay → Lark webhook
