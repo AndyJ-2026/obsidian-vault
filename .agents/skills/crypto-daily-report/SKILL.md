@@ -26,6 +26,8 @@ description: 生成每日加密货币行情日报。当用户说“加密日报�
 - 当前代码仓：
   - 本地：`/Users/jaker/crypto-daily-report`
   - GitHub：`https://github.com/AndyJ-2026/crypto-daily-report`
+- 当前调度源：Cloudflare Worker `black-swan-mcp` 的 Cron Trigger，cron 为 `30 2 * * *`。
+- GitHub Actions 只保留 `workflow_dispatch`，由 Cloudflare Cron 触发执行。
 - 远端 GitHub Actions 工作流与脚本路径：
   - `/Users/jaker/crypto-daily-report/.github/workflows/crypto-daily-report.yml`
   - `/Users/jaker/crypto-daily-report/scripts/crypto-daily-report.mjs`
