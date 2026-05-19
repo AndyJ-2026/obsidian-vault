@@ -5,7 +5,7 @@ local_path: "/Users/jaker/crypto-daily-report"
 github: "https://github.com/AndyJ-2026/crypto-daily-report"
 private: false
 status: running
-deploy: github-actions
+deploy: cloudflare-cron
 delivery: cloudflare-relay
 ---
 
@@ -30,12 +30,14 @@ delivery: cloudflare-relay
 ## 架构
 
 ```text
-GitHub Actions (10:30 BJT)
-  -> /Users/jaker/crypto-daily-report/scripts/crypto-daily-report.mjs
-    -> CoinMarketCap / CryptoSlate
-    -> PANEWS RSS + 页面
-    -> Cloudflare Worker /send-lark
-    -> Lark webhook
+Cloudflare Cron (10:30 BJT)
+  -> black-swan-mcp scheduled()
+    -> GitHub workflow_dispatch
+      -> /Users/jaker/crypto-daily-report/scripts/crypto-daily-report.mjs
+        -> CoinMarketCap / CryptoSlate
+        -> PANEWS RSS + 页面
+        -> Cloudflare Worker /send-lark
+        -> Lark webhook
 ```
 
 ## 代码结构
@@ -52,6 +54,8 @@ GitHub Actions (10:30 BJT)
 ## 运行规则
 
 - 调度时间：北京时间每天 `10:30`
+- 调度源：Cloudflare Cron，cron 表达式为 `30 2 * * *`
+- 执行器：GitHub Actions `workflow_dispatch`
 - 发送方式：只发送一条消息、只发送一张卡片
 - 转发方式：必须经由 Cloudflare relay，不直接 POST Lark webhook
 - 正文格式：由 `.agents/skills/crypto-daily-report/SKILL.md` 定义
